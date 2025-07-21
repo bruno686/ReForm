@@ -5,53 +5,224 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Re:Form — Reducing Human Priors in Scalable Formal Software Verification</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
+    <div class="hero-section">
         <div class="container">
-            <h1>Re:Form</h1>
-            <h2>Reducing Human Priors in Scalable Formal Software Verification with RL in LLMs</h2>
-            <p class="subtitle">A Preliminary Study on Dafny</p>
+            <div class="hero-content">
+                <h1 class="project-title">R E : F O R M</h1>
+                <h2 class="subtitle">Reducing Human Priors in Scalable Formal Software Verification with RL in LLMs</h2>
+                <p class="tagline">A Preliminary Study on Dafny</p>
+                
+                <div class="cta-buttons">
+                    <a href="https://github.com/Veri-Code/ReForm" class="btn btn-primary" target="_blank">
+                        <span class="btn-icon">📁</span>
+                        GitHub Repository
+                        <span class="star-count">⭐</span>
+                    </a>
+                    <a href="#abstract" class="btn btn-secondary">
+                        <span class="btn-icon">📄</span>
+                        Read Paper
+                    </a>
+                    <a href="#methodology" class="btn btn-secondary">
+                        <span class="btn-icon">🔬</span>
+                        Methodology
+                    </a>
+                </div>
+            </div>
+            
+            <div class="hero-visual">
+                <div class="diagram-placeholder">
+                    <div class="flow-step">
+                        <div class="step-icon">🔤</div>
+                        <div class="step-title">Informal Language</div>
+                        <div class="step-desc">Human priors & annotations</div>
+                    </div>
+                    <div class="flow-arrow">→</div>
+                    <div class="flow-step highlight">
+                        <div class="step-icon">⚡</div>
+                        <div class="step-title">Re:Form</div>
+                        <div class="step-desc">RL + Formal verification</div>
+                    </div>
+                    <div class="flow-arrow">→</div>
+                    <div class="flow-step">
+                        <div class="step-icon">✅</div>
+                        <div class="step-title">Scalable Verification</div>
+                        <div class="step-desc">Automated & provable</div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#method">Method</a></li>
-            <li><a href="#results">Results</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+    </div>
+
+    <nav class="main-nav">
+        <div class="container">
+            <ul>
+                <li><a href="#abstract">Abstract</a></li>
+                <li><a href="#methodology">Methodology</a></li>
+                <li><a href="#findings">Key Findings</a></li>
+                <li><a href="#results">Results</a></li>
+                <li><a href="#citation">Citation</a></li>
+            </ul>
+        </div>
     </nav>
-    <main>
-        <section id="about" class="section">
-            <h3>Background & Goals</h3>
-            <p>
-                Re:Form explores reducing human priors in scalable formal software verification by leveraging reinforcement learning (RL) in large language models (LLMs). This study uses Dafny as a case to demonstrate how automated reasoning can be enhanced with minimal human intervention.
-            </p>
+
+    <main class="main-content">
+        <section id="abstract" class="section">
+            <div class="container">
+                <h2>Abstract</h2>
+                <div class="abstract-content">
+                    <p>
+                        Existing informal language-based (e.g., human language) Large Language Models (LLMs) trained with Reinforcement Learning (RL) face a significant challenge: their verification processes, which provide crucial training signals, are neither reliable nor scalable. In fact, the prevalent large proprietary models could hardly generate verifiable programs.
+                    </p>
+                    <p>
+                        A promising yet largely uncharted alternative is <strong>formal language-based reasoning</strong>. Grounding LLMs in rigorous formal systems where generative models operate in formal language spaces (e.g., Dafny) enables the automatic and mathematically provable verification of their reasoning processes and outcomes. This capability is pivotal for achieving large-scale, reliable formal software verification.
+                    </p>
+                    <p>
+                        It is a common practice to employ human-annotated chain-of-thought and other human priors to induce the reasoning and coding capabilities of LLMs. Unfortunately, it becomes unacceptably all-consuming to provide such priors for supervising complex programming tasks.
+                    </p>
+                    <p>
+                        In this work, we systematically explore ways to <strong>reduce human priors</strong> with the formal language, Dafny, as the main environment for our pilot study. Our pipeline mainly relies on introducing an automatic and scalable data curation pipeline, and careful RL designs integrated with feedback from the formal language verifier.
+                    </p>
+                </div>
+            </div>
         </section>
-        <section id="method" class="section">
-            <h3>Method & Technology</h3>
-            <p>
-                Our approach integrates RL techniques with LLMs to automate the process of formal verification. Dafny, a language for program verification, serves as the testbed. The system iteratively refines verification strategies, learning from feedback and reducing reliance on handcrafted human priors.
-            </p>
+
+        <section id="methodology" class="section">
+            <div class="container">
+                <h2>Methodology</h2>
+                <div class="methodology-grid">
+                    <div class="method-card">
+                        <div class="method-icon">🔄</div>
+                        <h3>Automatic Data Curation</h3>
+                        <p>Scalable pipeline for generating and curating formal verification tasks without manual annotation.</p>
+                    </div>
+                    <div class="method-card">
+                        <div class="method-icon">🎯</div>
+                        <h3>RL Integration</h3>
+                        <p>Carefully designed reinforcement learning framework integrated with formal language verifier feedback.</p>
+                    </div>
+                    <div class="method-card">
+                        <div class="method-icon">🔧</div>
+                        <h3>Dafny Environment</h3>
+                        <p>Formal verification language serving as the testbed for reducing human supervision in program verification.</p>
+                    </div>
+                </div>
+            </div>
         </section>
+
+        <section id="findings" class="section">
+            <div class="container">
+                <h2>Key Findings</h2>
+                <div class="findings-list">
+                    <div class="finding-item">
+                        <div class="finding-number">1</div>
+                        <div class="finding-content">
+                            <h3>Formal Language Grounding</h3>
+                            <p>Grounding LLMs in formal systems enables automatic and mathematically provable verification of reasoning processes.</p>
+                        </div>
+                    </div>
+                    <div class="finding-item">
+                        <div class="finding-number">2</div>
+                        <div class="finding-content">
+                            <h3>Reduced Human Supervision</h3>
+                            <p>Our approach significantly reduces the need for human-annotated priors while maintaining verification quality.</p>
+                        </div>
+                    </div>
+                    <div class="finding-item">
+                        <div class="finding-number">3</div>
+                        <div class="finding-content">
+                            <h3>Scalable Verification</h3>
+                            <p>The automatic data curation pipeline enables large-scale formal software verification with minimal human intervention.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="results" class="section">
-            <h3>Results & Outlook</h3>
-            <p>
-                Preliminary results show promising improvements in verification scalability and reduced manual effort. Future work will focus on expanding to other verification tools and further optimizing RL strategies within LLMs.
-            </p>
+            <div class="container">
+                <h2>Results & Impact</h2>
+                <div class="results-content">
+                    <div class="result-highlight">
+                        <h3>🚀 Preliminary Results</h3>
+                        <p>Our preliminary study demonstrates promising improvements in verification scalability and reduced manual effort. The integration of RL with formal language verification shows potential for revolutionizing automated program verification.</p>
+                    </div>
+                    <div class="result-highlight">
+                        <h3>🔮 Future Directions</h3>
+                        <p>Future work will focus on expanding to other verification tools beyond Dafny, optimizing RL strategies within LLMs, and developing more sophisticated formal reasoning capabilities.</p>
+                    </div>
+                </div>
+            </div>
         </section>
-        <section id="contact" class="section">
-            <h3>Contact</h3>
-            <p>
-                For more information, please contact: <a href="mailto:your.email@example.com">your.email@example.com</a>
-            </p>
+
+        <section id="citation" class="section">
+            <div class="container">
+                <h2>Citation</h2>
+                <div class="citation-box">
+                    <pre><code>@article{reform2025,
+  title={Re:Form — Reducing Human Priors in Scalable Formal Software Verification with RL in LLMs: A Preliminary Study on Dafny},
+  author={[Your Name] and [Co-authors]},
+  journal={[Conference/Journal]},
+  year={2025},
+  url={https://github.com/Veri-Code/ReForm}
+}</code></pre>
+                </div>
+                <div class="links-section">
+                    <h3>Additional Links</h3>
+                    <div class="link-grid">
+                        <a href="https://github.com/Veri-Code/ReForm" class="link-card" target="_blank">
+                            <span class="link-icon">📁</span>
+                            <span class="link-text">GitHub Repository</span>
+                        </a>
+                        <a href="#methodology" class="link-card">
+                            <span class="link-icon">🔬</span>
+                            <span class="link-text">Methodology</span>
+                        </a>
+                        <a href="#findings" class="link-card">
+                            <span class="link-icon">💡</span>
+                            <span class="link-text">Key Findings</span>
+                        </a>
+                        <a href="mailto:your.email@example.com" class="link-card">
+                            <span class="link-icon">📧</span>
+                            <span class="link-text">Contact</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
+
     <footer>
         <div class="container">
             <p>&copy; 2025 Re:Form Project. All rights reserved.</p>
+            <p>Website inspired by modern academic project presentations</p>
         </div>
     </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('.main-nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+    </script>
 </body>
 </html>
